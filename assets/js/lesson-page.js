@@ -184,70 +184,75 @@ print(modelo.summary())</code></pre>
 <div class="lesson-block"><div class="lesson-block-number">D</div><div><h2>Reprodutibilidade</h2>
 <p>Um projeto organizado deve conservar <strong>dados brutos → script → resultados → gráficos → relatório</strong>. Registre versões das bibliotecas e não sobrescreva o arquivo original dos dados.</p></div></div>`
 }
-};
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-  const id = document.body.dataset.lesson;
-  const aula = (typeof AULAS !== "undefined") ? AULAS.find(a => a.id === id) : null;
-  const root = document.getElementById("lesson-content");
-  if (!root) return;
+const COURSE_PAGES=[
+ ["aula1.html","01 · Fundamentos"],["aula2.html","02 · Estatística descritiva"],
+ ["aula3.html","03 · Variabilidade"],["aula4.html","04 · Planejamento"],
+ ["aula5.html","05 · Delineamentos"],["aula6.html","06 · ANOVA"],
+ ["aula7.html","07 · Pressuposições"],["aula8.html","08 · Transformação"],
+ ["aula9.html","09 · Contrastes"],["aula10.html","10 · Fatoriais"],
+ ["aula11.html","11 · Parcelas divididas"],["aula12.html","12 · Regressão"],
+ ["aula13.html","13 · Análise conjunta"],["aula14.html","14 · Superfície"],
+ ["aula15.html","15 · Multivariada"],["aula16.html","16 · Computacional"]
+];
 
-  if (!aula) {
-    root.innerHTML = '<div class="content-card"><h2>Aula não encontrada</h2><p>O conteúdo desta aula ainda não foi cadastrado.</p></div>';
-    return;
-  }
+document.addEventListener("DOMContentLoaded",()=>{
+ const id=document.body.dataset.lesson;
+ const root=document.getElementById("lesson-content");
+ if(!root) return;
 
-  const complement = COMPLEMENTOS[id];
-  const pageOrder = [
-    "conceitos","estatistica-descritiva","variabilidade","planejamento","delineamentos",
-    "anova","pressupostos","transformacao","contrastes","fatoriais","parcelas",
-    "regressao","conjunta","superficie","multivariada","computacional"
-  ];
-  const pageNumber = pageOrder.indexOf(id) + 1;
+ if(COMPLEMENTOS[id]){
+   const meta={"variabilidade":["03","Variabilidade, Erro Experimental e Precisão","como medir a dispersão dos dados e compreender precisão, erro experimental e repetição."],"planejamento":["04","Planejamento Experimental","como transformar uma pergunta agronômica em um experimento bem estruturado."],"delineamentos":["05","Delineamentos Experimentais","como escolher e interpretar DIC, DBC e Quadrado Latino."],"anova":["06","Análise de Variância — ANOVA","como decompor a variabilidade e testar efeitos de tratamentos."],"pressupostos":["07","Pressuposições da ANOVA","como diagnosticar resíduos, normalidade, variâncias e independência."],"transformacao":["08","Transformação de Dados","quando e por que transformar uma variável resposta."],"contrastes":["09","Contrastes e Comparações","como formular comparações planejadas e contrastes ortogonais."],"fatoriais":["10","Experimentos Fatoriais","como estudar fatores simultaneamente e interpretar interações."],"parcelas":["11","Experimentos em Parcelas Divididas","como trabalhar com duas escalas de aleatorização e erros experimentais."],"regressao":["12","Regressão Linear","como modelar relações entre variáveis e interpretar coeficientes."],"conjunta":["13","Análise Conjunta de Experimentos","como estudar tratamentos em diferentes ambientes."],"superficie":["14","Superfície de Resposta","como modelar e localizar regiões de resposta ótima."],"multivariada":["15","Introdução à Análise Multivariada","como analisar várias variáveis simultaneamente."],"computacional":["16","Análise Computacional com R e Python","como organizar dados, ajustar modelos, diagnosticar e reproduzir análises."]}[id];
+   const index=COURSE_PAGES.findIndex(p=>p[0]===location.pathname.split("/").pop());
+   const prev=index>0?COURSE_PAGES[index-1]:null;
+   const next=index<COURSE_PAGES.length-1?COURSE_PAGES[index+1]:null;
 
-  document.title = `Aula ${pageNumber} — ${aula.titulo} | Estatística Experimental | UFT`;
+   const exercises={
+    variabilidade:["Explique a diferença entre variabilidade natural e erro experimental.","Por que aumentar subamostras não é o mesmo que aumentar repetições?","Mostre como o erro-padrão da média varia quando n aumenta."],
+    planejamento:["Identifique a unidade experimental em um ensaio de doses de N.","Monte uma hipótese nula para quatro tratamentos.","Explique um exemplo de confundimento no campo."],
+    delineamentos:["Quando usar DIC e quando usar DBC?","Escreva o modelo do DBC e identifique seus termos.","Explique como o bloqueamento pode reduzir o erro residual."],
+    anova:["Explique SQ, GL e QM.","O que representa a estatística F?","Por que significância estatística não é sinônimo de importância agronômica?"],
+    pressupostos:["Como interpretar um gráfico de resíduos versus ajustados?","Por que devemos analisar resíduos?","O que pode acontecer quando existe dependência entre observações?"],
+    transformacao:["Dê um exemplo em que logaritmo possa ser útil.","Qual é a finalidade de transformar a resposta?","Por que não devemos escolher uma transformação apenas para obter p<0,05?"],
+    contrastes:["Construa um contraste para comparar um tratamento com a média dos demais.","Verifique a ortogonalidade de dois contrastes.","Por que muitas comparações podem aumentar falsos positivos?"],
+    fatoriais:["Quantas combinações existem em um fatorial 3×4?","Explique interação entre dois fatores.","Como linhas de um gráfico de interação ajudam na interpretação?"],
+    parcelas:["Onde ocorre a primeira e a segunda aleatorização?","Por que existem erros associados a diferentes níveis?","Dê um exemplo agronômico de parcelas divididas."],
+    regressao:["Interprete β1 em uma regressão linear.","Calcule o ponto de máximo de uma função quadrática dada.","Por que extrapolação pode ser perigosa?"],
+    conjunta:["O que representa tratamento×ambiente?","Por que uma média geral pode esconder diferenças entre ambientes?","Diferencie produtividade média e estabilidade."],
+    superficie:["Identifique os termos de primeira e segunda ordem.","Como localizar um ponto estacionário?","Qual a utilidade das curvas de nível?"],
+    multivariada:["Para que serve o PCA?","O que representam as cargas dos componentes?","Por que padronização pode ser importante antes de uma análise multivariada?"],
+    computacional:["Quais colunas mínimas você criaria para um ensaio de doses?","Descreva um fluxo reprodutível de análise.","Por que o código não substitui a definição correta da unidade experimental?"]
+   }[id];
 
-  root.innerHTML = `
-  <section class="page-section" style="display:block;max-width:1180px;margin:auto">
+   document.title=`Aula ${meta[0]} — ${meta[1]} | Estatística Experimental | UFT`;
+   root.innerHTML=`
+   <section class="page-section" style="display:block;max-width:1180px;margin:auto">
     <div class="lesson-header">
-      <span class="kicker">AULA ${String(pageNumber).padStart(2,"0")} · ${aula.modulo.split("·")[1]?.trim() || "CURSO"}</span>
-      <h1>${aula.titulo}</h1>
-      <p>${aula.subtitulo}</p>
+      <span class="kicker">AULA ${meta[0]} · ESTATÍSTICA EXPERIMENTAL</span>
+      <h1>${meta[1]}</h1><p>${meta[2]}</p>
     </div>
-
     <div class="content-grid">
-      <article class="content-card">
-        <span>🎯 OBJETIVOS</span><h2>Ao final desta aula</h2>
-        <ul>${aula.objetivos.map(x => `<li>${x}</li>`).join("")}</ul>
-      </article>
-      <article class="content-card">
-        <span>🧭 IDEIA CENTRAL</span><h2>Como pensar</h2>
-        <p>${complement?.titulo || "Organize a pergunta, o desenho experimental, o modelo estatístico e a interpretação em uma sequência lógica."}</p>
-        <p><strong>Regra de ouro:</strong> o método de análise deve representar o planejamento e a forma como os dados foram gerados.</p>
-      </article>
+      <article class="content-card"><span>🎯 OBJETIVOS</span><h2>Ao final desta aula</h2>
+      <ul><li>Compreender os conceitos fundamentais do tema.</li><li>Relacionar teoria estatística e planejamento experimental.</li><li>Aplicar o conceito a situações agronômicas.</li><li>Interpretar resultados sem separar estatística do delineamento.</li></ul></article>
+      <article class="content-card"><span>🧭 IDEIA CENTRAL</span><h2>Como pensar</h2>
+      <p>${COMPLEMENTOS[id].titulo}</p><p><strong>Regra de ouro:</strong> a análise deve respeitar a forma como os dados foram produzidos.</p></article>
     </div>
-
-    <div class="lesson-body">
-      ${aula.blocos.map((b,i) => `
-        <article class="lesson-block">
-          <div class="lesson-block-number">${String(i+1).padStart(2,"0")}</div>
-          <div><h2>${b[0]}</h2>${b[1]}</div>
-        </article>`).join("")}
-    </div>
-
-    ${complement ? `<div class="section-heading"><div><span class="kicker">APROFUNDAMENTO</span><h2>${complement.titulo}</h2></div></div>${complement.html}` : ""}
-
-    <article class="content-card exercise-card">
-      <span>📝 FIXAÇÃO</span><h2>Exercícios</h2>
-      <ol>${aula.exercises.map(x => `<li>${x}</li>`).join("")}</ol>
-    </article>
-
+    <div class="section-heading"><div><span class="kicker">CONTEÚDO DA AULA</span><h2>Teoria e aplicação</h2></div></div>
+    ${COMPLEMENTOS[id].html}
+    <article class="content-card exercise-card"><span>📝 FIXAÇÃO</span><h2>Exercícios</h2><ol>${exercises.map(x=>`<li>${x}</li>`).join("")}</ol></article>
     <div class="lesson-nav" aria-label="Navegação entre aulas">
-      <a href="index.html">← Página inicial</a>
+      <a href="${prev?prev[0]:"index.html"}">${prev?"← "+prev[1]:"← Página inicial"}</a>
       <a href="index.html">☰ Menu do curso</a>
-      <a href="index.html">Próxima navegação →</a>
+      <a href="${next?next[0]:"index.html"}">${next?next[1]+" →":"Voltar ao início →"}</a>
     </div>
-  </section>`;
+   </section>`;
+   if(window.MathJax?.typesetPromise) window.MathJax.typesetPromise([root]);
+   return;
+ }
 
-  if (window.MathJax?.typesetPromise) window.MathJax.typesetPromise([root]);
+ // Aulas 1 e 2 continuam usando o conteúdo original.
+ const aula=typeof AULAS!=="undefined"?AULAS.find(a=>a.id===id):null;
+ if(!aula){root.innerHTML='<div class="content-card"><h2>Aula não encontrada</h2></div>';return;}
+ root.innerHTML=`<section class="page-section" style="display:block;max-width:1180px;margin:auto"><div class="lesson-header"><span class="kicker">AULA</span><h1>${aula.titulo}</h1><p>${aula.subtitulo}</p></div>${aula.blocos.map((b,i)=>`<article class="lesson-block"><div class="lesson-block-number">${i+1}</div><div><h2>${b[0]}</h2>${b[1]}</div></article>`).join("")}</section>`;
 });
