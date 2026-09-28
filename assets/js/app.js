@@ -18,6 +18,9 @@ function renderAulas(){
 }
 renderAulas();
 
+// Garante que a Aula 2 também seja encontrada mesmo após carregamento dinâmico.
+if (!document.getElementById("estatistica-descritiva")) console.error("Aula 2 não foi renderizada.");
+
 const sections=[...document.querySelectorAll(".page-section")], links=[...document.querySelectorAll("[data-section]")];
 function showSection(id){
  const target=document.getElementById(id)||document.getElementById("inicio");
@@ -31,3 +34,5 @@ window.addEventListener("hashchange",route);
 links.forEach(link=>link.addEventListener("click",e=>{const id=link.dataset.section;if(id){e.preventDefault();history.pushState(null,"","#"+id);showSection(id)}}));
 route();
 document.querySelectorAll(".nav-group-title").forEach(btn=>btn.addEventListener("click",()=>btn.parentElement.classList.toggle("expanded")));
+// Mantém Fundamentos aberto para que a Aula 2 fique visível no menu.
+document.querySelector(".nav-group")?.classList.add("expanded");
