@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 2 — Estatística Descritiva | UFT</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<main class="main" style="margin-left:0">
+<section class="page-section" style="display:block;max-width:1180px;margin:auto">
+<div class="lesson-header"><span class="kicker">AULA 2 · FUNDAMENTOS</span><h1>Estatística Descritiva e Variabilidade</h1><p>Da tabela de dados às primeiras conclusões</p></div>
+<div class="content-grid">
+<article class="content-card"><span>🎯 OBJETIVOS</span><h2>Ao final desta aula</h2><ul>
+<li>Calcular média, mediana, amplitude, variância e desvio-padrão.</li>
+<li>Calcular e interpretar o coeficiente de variação.</li>
+<li>Compreender o erro-padrão da média.</li>
+<li>Interpretar variabilidade em dados agronômicos.</li>
+<li>Preparar os dados para a ANOVA.</li>
+</ul></article>
+<article class="content-card"><span>🧭 IDEIA CENTRAL</span><h2>Primeiro conhecer, depois testar</h2><p>Antes da ANOVA, precisamos saber como os dados estão distribuídos, qual é o valor central e quanto as observações variam.</p><p><strong>Resumo → variabilidade → visualização → modelo estatístico.</strong></p></article>
+</div>
+<div class="lesson-body">
+<article class="lesson-block"><div class="lesson-block-number">01</div><div><h2>Por que descrever os dados?</h2><p>Imagine cinco parcelas de milho submetidas ao mesmo tratamento. Mesmo com o mesmo manejo, as produtividades não serão exatamente iguais. A estatística descritiva permite entender essa variação antes de comparar tratamentos.</p><div class="concept-box"><strong>Pergunta:</strong> qual é o valor típico dos dados e quão espalhados eles estão em torno desse valor?</div></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">02</div><div><h2>Média aritmética</h2><p>A média é obtida somando todos os valores e dividindo pelo número de observações:</p><div class="formula-box">\[\bar{x}=\frac{\sum_{i=1}^{n}x_i}{n}\]</div><p>Exemplo: produtividade = 4.000, 4.200, 4.100, 3.900 e 4.300 kg ha⁻¹.</p><p>\[\bar{x}=\frac{4000+4200+4100+3900+4300}{5}=4100\text{ kg ha}^{-1}\]</p><div class="example-box"><strong>Interpretação:</strong> a produtividade média das cinco parcelas foi 4.100 kg ha⁻¹.</div></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">03</div><div><h2>Mediana</h2><p>Ordenamos os dados e identificamos o valor central. Para 3.800, 4.000, 4.100, 4.200 e 7.000, a mediana é <strong>4.100</strong>.</p><p>Nesse exemplo, a média é 4.620 kg ha⁻¹, bastante influenciada pelo valor extremo 7.000. A mediana é menos sensível a esse tipo de valor.</p></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">04</div><div><h2>Amplitude</h2><p>A amplitude é a diferença entre o maior e o menor valor:</p><div class="formula-box">Amplitude = máximo − mínimo</div><p>Para 3.800, 4.000, 4.100, 4.200 e 7.000:</p><p><strong>Amplitude = 7.000 − 3.800 = 3.200 kg ha⁻¹.</strong></p></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">05</div><div><h2>Variância</h2><p>A variância mede a dispersão dos valores em torno da média. Para uma amostra:</p><div class="formula-box">\[s^2=\frac{\sum_{i=1}^{n}(x_i-\bar{x})^2}{n-1}\]</div><p>Usando 4.000, 4.200, 4.100, 3.900 e 4.300, a média é 4.100.</p><table class="lesson-table"><thead><tr><th>x</th><th>x − média</th><th>(x − média)²</th></tr></thead><tbody>
+<tr><td>4.000</td><td>−100</td><td>10.000</td></tr><tr><td>4.200</td><td>+100</td><td>10.000</td></tr><tr><td>4.100</td><td>0</td><td>0</td></tr><tr><td>3.900</td><td>−200</td><td>40.000</td></tr><tr><td>4.300</td><td>+200</td><td>40.000</td></tr>
+</tbody></table><p>Soma dos quadrados = 100.000. Portanto:</p><p>\[s^2=\frac{100000}{5-1}=25000\]</p><div class="example-box"><strong>Variância = 25.000 (kg ha⁻¹)².</strong></div></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">06</div><div><h2>Desvio-padrão</h2><p>O desvio-padrão é a raiz quadrada da variância:</p><div class="formula-box">\[s=\sqrt{s^2}\]</div><p>\[s=\sqrt{25000}\approx158,11\text{ kg ha}^{-1}\]</p><div class="definition-box"><strong>Por que ele é importante?</strong> A variância fica em unidade ao quadrado; o desvio-padrão volta para a unidade original da produtividade.</div></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">07</div><div><h2>Coeficiente de variação — CV</h2><p>O CV expressa a dispersão em relação à média:</p><div class="formula-box">\[CV=\frac{s}{\bar{x}}\times100\]</div><p>No exemplo:</p><p>\[CV=\frac{158,11}{4100}\times100\approx3,86\%\]</p><p>O CV permite comparar a variabilidade relativa entre conjuntos de dados com médias ou unidades diferentes. Ele deve sempre ser interpretado no contexto da variável e do experimento.</p></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">08</div><div><h2>Erro-padrão da média</h2><p>O erro-padrão descreve a incerteza associada à estimativa da média:</p><div class="formula-box">\[EP=\frac{s}{\sqrt n}\]</div><p>No exemplo:</p><p>\[EP=\frac{158,11}{\sqrt5}\approx70,71\text{ kg ha}^{-1}\]</p><p>Aumentar o número de repetições tende a reduzir o erro-padrão, desde que as unidades sejam independentes.</p></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">09</div><div><h2>O que o desvio-padrão nos diz?</h2><p>Se duas variedades apresentam a mesma produtividade média, mas uma possui desvio-padrão de 100 kg ha⁻¹ e outra de 600 kg ha⁻¹, a segunda apresenta maior dispersão dos resultados.</p><div class="comparison-grid"><div><span>VARIEDADE A</span><b>Média = 4.000</b><p>DP = 100 kg ha⁻¹</p></div><div><span>VARIEDADE B</span><b>Média = 4.000</b><p>DP = 600 kg ha⁻¹</p></div></div></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">10</div><div><h2>Por que o CV é útil na Agronomia?</h2><p>O CV transforma o desvio-padrão em uma medida relativa. Isso facilita a comparação da dispersão de experimentos ou variáveis que possuem escalas diferentes.</p><div class="warning-box"><strong>Atenção:</strong> não existe um único limite universal de CV que determine se um experimento é “bom” ou “ruim”. A interpretação depende da cultura, característica medida, ambiente, delineamento e objetivo.</div></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">11</div><div><h2>Média alta não significa diferença significativa</h2><p>Considere dois tratamentos. A diferença entre as médias pode ser grande, mas a variabilidade dentro dos tratamentos também pode ser grande. A ANOVA considera simultaneamente a variação entre tratamentos e o erro experimental.</p><div class="formula-box">Diferença observada ≠ automaticamente diferença estatística</div></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">12</div><div><h2>Exemplo com doses de nitrogênio</h2><table class="lesson-table"><thead><tr><th>Dose de N</th><th>Média (kg ha⁻¹)</th></tr></thead><tbody><tr><td>0</td><td>3.800</td></tr><tr><td>60</td><td>4.500</td></tr><tr><td>120</td><td>5.100</td></tr><tr><td>180</td><td>4.900</td></tr></tbody></table><p>Visualmente, 120 kg ha⁻¹ apresenta a maior média. Porém, ainda precisamos conhecer as repetições e a variabilidade para fazer inferência estatística.</p></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">13</div><div><h2>Visualização dos dados</h2><p>Gráficos de pontos mostram cada observação; histogramas mostram a distribuição; boxplots ajudam a observar mediana, dispersão e possíveis valores extremos.</p><div class="concept-box"><strong>Boa prática:</strong> não esconda os dados individuais quando o tamanho da amostra permitir visualizá-los. As médias sozinhas podem esconder padrões importantes.</div></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">14</div><div><h2>Desafio agronômico</h2><table class="lesson-table"><thead><tr><th>Dose</th><th>Observações (kg ha⁻¹)</th></tr></thead><tbody><tr><td>0</td><td>3700, 3800, 3750, 3900, 3850</td></tr><tr><td>60</td><td>4300, 4500, 4400, 4600, 4500</td></tr><tr><td>120</td><td>5000, 5100, 5200, 5000, 5100</td></tr><tr><td>180</td><td>4800, 4900, 5000, 4900, 4850</td></tr></tbody></table><p>Para cada dose, calcule: <strong>média, mediana, mínimo, máximo, amplitude, variância, desvio-padrão e CV</strong>.</p></div></article>
+
+<article class="lesson-block"><div class="lesson-block-number">15</div><div><h2>Mapa mental da Aula 2</h2><div class="flow-box"><b>Dados</b><span>→</span><b>Centro</b><span>→</span><b>Dispersão</b><span>→</span><b>Variabilidade relativa</b><br><small>observações → média/mediana → variância/DP → CV → interpretação → ANOVA</small></div></div></article>
+</div>
+<article class="content-card exercise-card"><span>📝 EXERCÍCIOS</span><h2>Fixação</h2><ol>
+<li>Calcule a média de 10, 12, 14, 16 e 18.</li>
+<li>Explique por que a mediana pode ser útil quando existe um valor extremo.</li>
+<li>Calcule a amplitude dos valores 18, 22, 20, 25 e 19.</li>
+<li>Diferencie variância, desvio-padrão e CV.</li>
+<li>Calcule o CV quando a média é 5.000 kg ha⁻¹ e o desvio-padrão é 250 kg ha⁻¹.</li>
+<li>Compare dois tratamentos com a mesma média, mas DP de 100 e 500 kg ha⁻¹.</li>
+<li>Explique por que uma diferença entre médias não prova, sozinha, significância estatística.</li>
+</ol></article>
+<div class="lesson-nav"><a href="index.html#conceitos">← Aula 1</a><a href="index.html#planejamento">Próxima aula →</a></div>
+</section>
+</main>
+</body>
+</html>
