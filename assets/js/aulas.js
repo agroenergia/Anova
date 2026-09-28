@@ -3,7 +3,7 @@ const AULAS = [
  "id": "conceitos",
  "modulo": "01 · FUNDAMENTOS",
  "titulo": "Fundamentos da Estatística Experimental",
- "subtitulo": "Aula 1 — entendendo os conceitos que formam a linguagem de um experimento.",
+ "subtitulo": "Aula 1 — a linguagem básica que transforma uma pergunta agronômica em um experimento analisável.",
  "objetivos": [
   "Compreender por que a Estatística Experimental é necessária na ciência agronômica.",
   "Distinguir população, amostra, unidade experimental e unidade observacional.",
@@ -135,9 +135,59 @@ const AULAS = [
    "C"
   ]
  ]
-},
-{
- id:"variabilidade", modulo:"02 · FUNDAMENTOS", titulo:"Variabilidade, Erro Experimental e Precisão", subtitulo:"Por que duas parcelas tratadas da mesma forma não produzem exatamente o mesmo resultado.",
+},{
+ "id": "estatistica-descritiva",
+ "modulo": "01 · FUNDAMENTOS",
+ "titulo": "Estatística Descritiva e Variabilidade",
+ "subtitulo": "Aula 2 — aprendendo a resumir os dados antes de testar hipóteses.",
+ "objetivos": [
+  "Calcular e interpretar média, mediana, variância e desvio-padrão.",
+  "Compreender o coeficiente de variação como medida relativa de dispersão.",
+  "Escolher gráficos adequados para visualizar dados experimentais.",
+  "Interpretar um conjunto de dados agronômicos antes da ANOVA."
+ ],
+ "blocos": [
+  [
+   "1. Por que descrever os dados antes da ANOVA",
+   "<p>Antes de testar diferenças entre tratamentos, precisamos conhecer os dados. A estatística descritiva mostra o valor típico, a dispersão e possíveis valores extremos.</p><div class='concept-box'><strong>Regra prática:</strong> primeiro conheça os dados; depois escolha e aplique o modelo estatístico.</div>"
+  ],
+  [
+   "2. Média",
+   "<p>A média é a soma dos valores dividida pelo número de observações.</p><div class='formula-box'>Média = soma dos valores ÷ número de observações</div><p>Exemplo: 4.000, 4.200, 4.100, 3.900 e 4.300 kg ha⁻¹ têm média de <strong>4.100 kg ha⁻¹</strong>.</p>"
+  ],
+  [
+   "3. Mediana",
+   "<p>A mediana é o valor central depois que os dados são ordenados. Ela é útil quando existem valores extremos.</p><p>Exemplo: 3.800, 4.000, <strong>4.100</strong>, 4.200 e 7.000. A mediana é 4.100, enquanto a média é puxada pelo valor 7.000.</p>"
+  ],
+  [
+   "4. Variância e desvio-padrão",
+   "<p>A variância mede a dispersão em torno da média. O desvio-padrão é a raiz quadrada da variância e permanece na unidade original.</p><div class='formula-box'>s = √[Σ(xᵢ − x̄)² ÷ (n − 1)]</div><p>Quanto maior o desvio-padrão, maior a dispersão dos resultados.</p>"
+  ],
+  [
+   "5. Coeficiente de variação",
+   "<p>O coeficiente de variação relaciona o desvio-padrão à média.</p><div class='formula-box'>CV = (s ÷ x̄) × 100</div><p>Em experimentos agrícolas, o CV deve ser interpretado junto com a cultura, variável resposta e condições do experimento.</p>"
+  ],
+  [
+   "6. Exemplo agronômico",
+   "<table class='lesson-table'><thead><tr><th>Parcela</th><th>Produtividade kg ha⁻¹</th></tr></thead><tbody><tr><td>1</td><td>4.000</td></tr><tr><td>2</td><td>4.200</td></tr><tr><td>3</td><td>4.100</td></tr><tr><td>4</td><td>3.900</td></tr><tr><td>5</td><td>4.300</td></tr></tbody></table><p>A média é 4.100 kg ha⁻¹. Agora precisamos avaliar a dispersão para saber quão homogêneas foram as parcelas.</p>"
+  ],
+  [
+   "7. Visualização",
+   "<p>Gráficos de pontos, histogramas e boxplots ajudam a enxergar distribuição, dispersão, assimetria e valores extremos. Uma tabela informa números; um gráfico ajuda a perceber padrões.</p>"
+  ],
+  [
+   "8. Resumo",
+   "<div class='concept-box'><strong>Média</strong> = centro dos dados.<br><strong>Desvio-padrão</strong> = dispersão na unidade original.<br><strong>CV</strong> = dispersão relativa.<br><strong>Gráfico</strong> = visão da distribuição.<br><strong>ANOVA</strong> = comparação formal baseada no modelo.</div>"
+  ]
+ ],
+ "exercicios": [
+  "Calcule a média de 10, 12, 14, 16 e 18.",
+  "Explique por que a mediana pode ser útil quando existe um valor extremo.",
+  "Diferencie desvio-padrão e coeficiente de variação.",
+  "Por que devemos visualizar os dados antes da ANOVA?"
+ ]
+},{
+ id:"variabilidade", modulo:"02 · FUNDAMENTOS", titulo:"Variabilidade, Erro Experimental e Precisão", subtitulo:"como medir a dispersão dos dados e entender precisão, erro experimental e repetição.",
  objetivos:["Separar variabilidade natural de erro experimental.","Diferenciar precisão de exatidão.","Compreender repetição e erro-padrão da média."],
  blocos:[
  ["1. Fontes de variação","<p>Mesmo sob o mesmo tratamento, parcelas podem diferir por fertilidade, umidade, posição, pragas, histórico de manejo e variações microambientais. A experimentação procura reduzir fontes controláveis e representar as demais no erro.</p>"],
@@ -148,7 +198,7 @@ const AULAS = [
  exercicios:["Explique por que aumentar repetições tende a melhorar a precisão.","Dê dois exemplos de fontes controláveis de variação em um experimento agrícola.","Diferencie repetição de subamostragem."]
 },
 {
- id:"planejamento", modulo:"03 · PLANEJAMENTO", titulo:"Planejamento Experimental", subtitulo:"Como transformar uma pergunta científica em um experimento válido.",
+ id:"planejamento", modulo:"03 · PLANEJAMENTO", titulo:"Planejamento Experimental", subtitulo:"como transformar uma hipótese agronômica em um experimento planejado, controlado e reproduzível.",
  objetivos:["Definir hipótese, tratamentos, unidade experimental e variável resposta.","Planejar repetição, aleatorização e controle local.","Evitar pseudorrepetição, confundimento e viés."],
  blocos:[
  ["1. Pergunta e hipótese","<p>Comece com uma pergunta mensurável. Exemplo: “Doses crescentes de N alteram a produtividade do milho?”. A hipótese estatística normalmente envolve uma hipótese nula, como <strong>H₀: μ₁=μ₂=...=μₖ</strong>, contra uma alternativa de que pelo menos uma média difere.</p>"],
@@ -162,8 +212,8 @@ const AULAS = [
  exercicios:["Monte o planejamento de um ensaio com quatro doses de N e cinco repetições.","Identifique um possível confundimento em um experimento sem aleatorização.","Explique por que o plano de análise deve ser pensado antes da coleta."]
 },
 {
- id:"delineamentos", modulo:"04 · DELINEAMENTOS", titulo:"Delineamentos Experimentais", subtitulo:"DIC, DBC e Quadrado Latino.",
- objetivos:["Reconhecer quando usar DIC, DBC e Quadrado Latino.","Entender a estrutura do modelo de cada delineamento.","Relacionar controle local e redução do erro."],
+ id:"delineamentos", modulo:"04 · DELINEAMENTOS", titulo:"Delineamentos Experimentais", subtitulo:"como escolher DIC, DBC ou Quadrado Latino de acordo com a estrutura da área experimental.",
+ objetivos:["Reconhecer quando usar como escolher DIC, DBC ou Quadrado Latino de acordo com a estrutura da área experimental.","Entender a estrutura do modelo de cada delineamento.","Relacionar controle local e redução do erro."],
  blocos:[
  ["1. DIC — Delineamento Inteiramente Casualizado","<p>No DIC, os tratamentos são atribuídos aleatoriamente às unidades experimentais. É adequado quando as unidades são relativamente homogêneas. Um modelo simples é \(Y_{ij}=\mu+\tau_i+\varepsilon_{ij}\).</p>"],
  ["2. DBC — Delineamento em Blocos Casualizados","<p>No DBC, cada bloco contém os tratamentos e representa um conjunto de unidades semelhantes. O modelo pode ser escrito como \(Y_{ij}=\mu+\tau_i+\beta_j+\varepsilon_{ij}\). O bloco explica uma fonte conhecida de variação e pode reduzir o erro residual.</p>"],
@@ -174,7 +224,7 @@ const AULAS = [
  exercicios:["Desenhe um DBC para cinco tratamentos e quatro blocos.","Explique a diferença entre repetição e bloco.","Quando o Quadrado Latino é mais adequado que o DBC?"]
 },
 {
- id:"anova", modulo:"05 · ANOVA", titulo:"Análise de Variância — ANOVA", subtitulo:"Particionando a variação para testar efeitos de tratamentos.",
+ id:"anova", modulo:"05 · ANOVA", titulo:"Análise de Variância — ANOVA", subtitulo:"como separar a variação observada e testar se os tratamentos apresentam diferenças.",
  objetivos:["Entender a lógica da ANOVA.","Interpretar SQ, GL, QM, F e p-valor.","Construir e interpretar uma tabela de ANOVA."],
  blocos:[
  ["1. Ideia central","<p>A ANOVA compara a variação entre médias de tratamentos com a variação existente dentro dos tratamentos. Para um fator em DIC, a variação total é particionada em <strong>tratamentos + erro</strong>.</p>"],
@@ -188,7 +238,7 @@ const AULAS = [
  exercicios:["Explique por que a ANOVA usa uma razão entre quadrados médios.","Se SQTrat=300 e GLTrat=3, calcule QMTrat.","Com QMTrat=40 e QME=5, calcule F.","Explique o que uma ANOVA significativa não permite concluir sozinha."]
 },
 {
- id:"pressupostos", modulo:"06 · PRESSUPOSIÇÕES", titulo:"Pressuposições da ANOVA", subtitulo:"Independência, normalidade e homogeneidade: como diagnosticar o modelo.",
+ id:"pressupostos", modulo:"06 · PRESSUPOSIÇÕES", titulo:"Pressuposições da ANOVA", subtitulo:"como verificar se o modelo da ANOVA é adequado aos dados antes de interpretar os resultados.",
  objetivos:["Entender por que as pressuposições importam.","Avaliar resíduos e variâncias.","Conhecer alternativas quando o modelo não descreve adequadamente os dados."],
  blocos:[
  ["1. Resíduos","<p>Resíduo é a diferença entre o valor observado e o valor ajustado pelo modelo: \(e_i=y_i-\hat y_i\). Diagnósticos devem ser feitos principalmente sobre resíduos, e não apenas sobre os dados brutos.</p>"],
@@ -201,7 +251,7 @@ const AULAS = [
  exercicios:["Qual pressuposição está relacionada ao planejamento?","O que um gráfico de resíduos versus ajustados pode revelar?","Por que um teste de normalidade não deve ser usado isoladamente?"]
 },
 {
- id:"transformacao", modulo:"06 · PRESSUPOSIÇÕES", titulo:"Transformação de Dados", subtitulo:"Mudando a escala da resposta para representar melhor a estrutura do erro.",
+ id:"transformacao", modulo:"06 · PRESSUPOSIÇÕES", titulo:"Transformação de Dados", subtitulo:"quando e por que transformar a variável resposta para melhorar a representação da variabilidade.",
  objetivos:["Entender o objetivo de uma transformação.","Conhecer log, raiz quadrada e transformações para proporções.","Interpretar resultados na escala transformada e original."],
  blocos:[
  ["1. Por que transformar?","<p>Uma transformação pode estabilizar variâncias, aproximar a distribuição dos resíduos da normalidade ou tornar a relação entre resposta e preditor mais adequada. Ela não deve ser aplicada apenas para “fazer o p-valor ficar significativo”.</p>"],
@@ -213,7 +263,7 @@ const AULAS = [
  exercicios:["Quando o logaritmo pode ser apropriado?","Por que transformar não deve ser usado para buscar significância?","Dê um exemplo em que um modelo de contagem seja mais natural que uma ANOVA transformada."]
 },
 {
- id:"contrastes", modulo:"07 · CONTRASTES", titulo:"Contrastes e Comparações Múltiplas", subtitulo:"Perguntas específicas sobre tratamentos e controle do erro de comparação.",
+ id:"contrastes", modulo:"07 · CONTRASTES", titulo:"Contrastes e Comparações Múltiplas", subtitulo:"como comparar tratamentos de forma planejada e interpretar comparações múltiplas.",
  objetivos:["Construir contrastes lineares.","Entender contrastes ortogonais.","Diferenciar contraste planejado de comparação pós-ANOVA.","Conhecer Tukey, Duncan e Scott-Knott de forma crítica."],
  blocos:[
  ["1. Contraste","<p>Um contraste é uma combinação linear de médias \(L=\sum c_i\mu_i\), em que \(\sum c_i=0\). Exemplo: comparar a média de três doses altas com a dose controle: \(L=(-3)\mu_0+\mu_{60}+\mu_{120}+\mu_{180}\).</p>"],
@@ -225,7 +275,7 @@ const AULAS = [
  exercicios:["Monte um contraste para comparar controle contra a média de três tratamentos.","Verifique se (1,-1,0,0) e (0,0,1,-1) são ortogonais.","Explique por que múltiplas comparações exigem cuidado."]
 },
 {
- id:"fatoriais", modulo:"08 · FATORIAIS", titulo:"Experimentos Fatoriais", subtitulo:"Estudando fatores simultaneamente e descobrindo interações.",
+ id:"fatoriais", modulo:"08 · FATORIAIS", titulo:"Experimentos Fatoriais", subtitulo:"como estudar dois ou mais fatores ao mesmo tempo e interpretar efeitos principais e interações.",
  objetivos:["Distinguir fator, nível e combinação de tratamentos.","Interpretar efeitos principais e interação.","Evitar interpretações erradas quando existe interação."],
  blocos:[
  ["1. Estrutura","<p>Um fatorial 2×3 possui dois fatores: o primeiro com 2 níveis e o segundo com 3. Há 6 combinações de tratamentos. Em vez de estudar cada fator isoladamente, o fatorial permite avaliar efeitos principais e interação.</p>"],
@@ -237,7 +287,7 @@ const AULAS = [
  exercicios:["Quantas combinações existem em um fatorial 3×4?","Explique interação com suas próprias palavras.","Dê um exemplo agrícola em que interação seja esperada."]
 },
 {
- id:"parcelas", modulo:"09 · PARCELAS DIVIDIDAS", titulo:"Experimentos em Parcelas Divididas", subtitulo:"Quando fatores possuem diferentes unidades de aleatorização.",
+ id:"parcelas", modulo:"09 · PARCELAS DIVIDIDAS", titulo:"Experimentos em Parcelas Divididas", subtitulo:"como analisar experimentos em que os fatores possuem diferentes unidades de aleatorização.",
  objetivos:["Identificar parcela principal e subparcela.","Entender por que existem dois erros experimentais.","Interpretar modelos de parcelas divididas."],
  blocos:[
  ["1. Por que usar parcelas divididas?","<p>Quando um fator é difícil ou caro de aplicar em pequenas unidades, ele pode ser aplicado à parcela principal, enquanto outro fator é aplicado às subparcelas. Exemplo: irrigação em parcelas grandes e cultivar em subparcelas.</p>"],
@@ -249,7 +299,7 @@ const AULAS = [
  exercicios:["Qual fator deve ocupar a parcela principal quando sua aplicação é difícil de aleatorizar em unidades pequenas?","Por que há dois erros?","Explique o que muda na interpretação se A×B for significativa."]
 },
 {
- id:"regressao", modulo:"10 · REGRESSÃO", titulo:"Modelos de Regressão Linear", subtitulo:"Modelando respostas quantitativas em função de variáveis explicativas.",
+ id:"regressao", modulo:"10 · REGRESSÃO", titulo:"Modelos de Regressão Linear", subtitulo:"como relacionar uma resposta agronômica quantitativa com doses, tempo, temperatura ou outras variáveis.",
  objetivos:["Distinguir correlação de regressão.","Ajustar e interpretar regressão linear simples.","Interpretar coeficientes, R² e resíduos.","Reconhecer limites de extrapolação."],
  blocos:[
  ["1. Modelo","<p>Na regressão linear simples: \(Y=\beta_0+\beta_1X+\varepsilon\). \(\beta_0\) é o intercepto e \(\beta_1\) é a mudança média esperada em Y para uma unidade adicional de X, sob o modelo.</p>"],
@@ -262,7 +312,7 @@ const AULAS = [
  exercicios:["Interprete \(\beta_1=12\) em uma regressão produtividade × dose.","Por que R² alto não garante causalidade?","Calcule o ponto crítico para β₁=20 e β₂=-0,5."]
 },
 {
- id:"conjunta", modulo:"11 · ANÁLISE CONJUNTA", titulo:"Análise Conjunta de Experimentos", subtitulo:"Como analisar experimentos repetidos em ambientes, anos ou locais.",
+ id:"conjunta", modulo:"11 · ANÁLISE CONJUNTA", titulo:"Análise Conjunta de Experimentos", subtitulo:"como integrar experimentos realizados em diferentes locais, anos ou ambientes.",
  objetivos:["Entender ambiente como fonte de variação.","Avaliar interação tratamento × ambiente.","Distinguir consistência de resposta de resposta específica."],
  blocos:[
  ["1. Por que combinar experimentos?","<p>Ensaios podem ser conduzidos em diferentes locais, anos ou épocas para avaliar estabilidade e generalização. A análise conjunta considera esses ambientes simultaneamente.</p>"],
@@ -274,7 +324,7 @@ const AULAS = [
  exercicios:["Quais fontes podem ser chamadas de ambiente?","O que significa tratamento × ambiente?","Por que uma média geral pode ser insuficiente quando há interação forte?"]
 },
 {
- id:"superficie", modulo:"12 · SUPERFÍCIE", titulo:"Superfície de Resposta", subtitulo:"Modelando sistemas com múltiplos fatores quantitativos e buscando condições ótimas.",
+ id:"superficie", modulo:"12 · SUPERFÍCIE", titulo:"Superfície de Resposta", subtitulo:"como modelar respostas com vários fatores quantitativos e localizar regiões de interesse.",
  objetivos:["Compreender modelos de primeira e segunda ordem.","Interpretar termos lineares, quadráticos e de interação.","Usar superfície e curvas de nível para interpretar respostas."],
  blocos:[
  ["1. Ideia","<p>Superfície de resposta estuda como uma resposta muda em função de fatores quantitativos. Em duas variáveis, o modelo quadrático típico é \(Y=\beta_0+\beta_1X_1+\beta_2X_2+\beta_{11}X_1^2+\beta_{22}X_2^2+\beta_{12}X_1X_2+\varepsilon\).</p>"],
@@ -286,7 +336,7 @@ const AULAS = [
  exercicios:["Identifique no modelo quadrático quais termos representam curvatura.","O que significa X₁X₂?","Por que não se deve extrapolar livremente a superfície?"]
 },
 {
- id:"multivariada", modulo:"13 · MULTIVARIADA", titulo:"Introdução à Análise Multivariada", subtitulo:"Quando várias características precisam ser consideradas simultaneamente.",
+ id:"multivariada", modulo:"13 · MULTIVARIADA", titulo:"Introdução à Análise Multivariada", subtitulo:"como analisar simultaneamente várias características agronômicas usando técnicas multivariadas.",
  objetivos:["Entender a diferença entre análise univariada e multivariada.","Conhecer PCA e análise de agrupamento.","Interpretar distância, variância e componentes."],
  blocos:[
  ["1. Por que multivariada?","<p>Um experimento agrícola pode medir produtividade, altura, biomassa, teor de N, índice de área foliar e vários atributos do solo. Analisar cada variável isoladamente pode ocultar relações entre elas.</p>"],
@@ -299,7 +349,7 @@ const AULAS = [
  exercicios:["Quando padronizar variáveis antes de PCA?","O que representa a variância explicada por um componente?","Por que um cluster não deve ser interpretado automaticamente como uma categoria biológica real?"]
 },
 {
- id:"computacional", modulo:"14 · COMPUTACIONAL", titulo:"Análise Computacional com R e Python", subtitulo:"Transformando dados experimentais em análises reproduzíveis.",
+ id:"computacional", modulo:"14 · COMPUTACIONAL", titulo:"Análise Computacional com R e Python", subtitulo:"como organizar dados, executar análises em R/Python e produzir resultados reproduzíveis.",
  objetivos:["Organizar dados em formato adequado.","Conhecer o fluxo de análise em R e Python.","Registrar scripts, versões, gráficos e resultados de forma reproduzível."],
  blocos:[
  ["1. Dados em formato organizado","<p>Prefira uma estrutura em que cada linha represente uma observação/unidade e cada coluna uma variável. Exemplo: bloco, tratamento, dose, cultivar, produtividade e outras respostas.</p>"],
