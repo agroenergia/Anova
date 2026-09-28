@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <article class="content-card exercise-card">
       <span>📝 FIXAÇÃO</span><h2>Exercícios</h2>
-      <ol>${aula.exercicios.map(x => `<li>${x}</li>`).join("")}</ol>
+      <ol>${aula.exercises.map(x => `<li>${x}</li>`).join("")}</ol>
     </article>
 
     <div class="lesson-nav" aria-label="Navegação entre aulas">
