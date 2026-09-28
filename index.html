@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Estatística Experimental — Mestrado em Agronomia Digital — UFT Palmas — 2026/2">
+  <title>Estatística Experimental | UFT • Agronomia Digital</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">Σ</div>
+      <div>
+        <strong>Estatística<br>Experimental</strong>
+        <span>UFT • 2026/2</span>
+      </div>
+    </div>
+
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">×</button>
+
+    <nav class="nav" aria-label="Navegação da disciplina">
+      <a class="nav-link active" href="#inicio" data-section="inicio">⌂ <span>Início</span></a>
+
+      <div class="nav-group">
+        <button class="nav-group-title" type="button">01 · Fundamentos <span>⌄</span></button>
+        <div class="nav-submenu">
+          <a href="#conceitos" data-section="conceitos">Conceitos</a>
+          <a href="#estatistica-descritiva" data-section="estatistica-descritiva">Estatística descritiva</a>
+          <a href="#variabilidade" data-section="variabilidade">Variabilidade</a>
+        </div>
+      </div>
+
+      <a class="nav-link" href="#planejamento" data-section="planejamento">🧪 <span>02 · Planejamento</span></a>
+      <a class="nav-link" href="#anova" data-section="anova">📊 <span>03 · ANOVA</span></a>
+      <a class="nav-link" href="#pressupostos" data-section="pressupostos">🔬 <span>04 · Pressuposições</span></a>
+      <a class="nav-link" href="#delineamentos" data-section="delineamentos">🌱 <span>05 · Delineamentos</span></a>
+      <a class="nav-link" href="#contrastes" data-section="contrastes">⚖️ <span>06 · Contrastes</span></a>
+      <a class="nav-link" href="#fatoriais" data-section="fatoriais">🧩 <span>07 · Fatoriais</span></a>
+      <a class="nav-link" href="#parcelas" data-section="parcelas">🌾 <span>08 · Parcelas divididas</span></a>
+      <a class="nav-link" href="#regressao" data-section="regressao">📈 <span>09 · Regressão</span></a>
+      <a class="nav-link" href="#conjunta" data-section="conjunta">🌐 <span>10 · Análise conjunta</span></a>
+      <a class="nav-link" href="#superficie" data-section="superficie">📐 <span>11 · Superfície de resposta</span></a>
+      <a class="nav-link" href="#multivariada" data-section="multivariada">🧬 <span>12 · Multivariada</span></a>
+      <a class="nav-link" href="#computacional" data-section="computacional">💻 <span>13 · Computacional</span></a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Mestrado em Agronomia Digital</span>
+      <span>Universidade Federal do Tocantins</span>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-button" id="openMenu" aria-label="Abrir menu">☰</button>
+      <div class="breadcrumb">UFT / Agronomia Digital / Estatística Experimental</div>
+      <span class="semester">2026/2</span>
+    </header>
+
+    <section id="inicio" class="page-section active-section">
+      <div class="hero">
+        <div class="eyebrow">MESTRADO EM AGRONOMIA DIGITAL</div>
+        <h1>Estatística<br><em>Experimental</em></h1>
+        <p class="hero-text">Da pergunta experimental à interpretação dos resultados: planejamento, análise estatística e aplicações na ciência agronômica.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#conceitos">Começar pelas bases →</a>
+          <a class="button secondary" href="#anova">Ir para ANOVA</a>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <span class="kicker">TRILHA DA DISCIPLINA</span>
+          <h2>Aprenda em sequência</h2>
+        </div>
+        <p>Os módulos seguem uma progressão do raciocínio estatístico básico até modelos experimentais mais complexos.</p>
+      </div>
+
+      <div class="module-grid">
+        <article class="module-card featured"><span class="module-number">01</span><div class="module-icon">📘</div><h3>Fundamentos</h3><p>Conceitos, dados, estatística descritiva e variabilidade.</p><a href="#conceitos">Explorar →</a></article>
+        <article class="module-card"><span class="module-number">02</span><div class="module-icon">🧪</div><h3>Planejamento Experimental</h3><p>Como estruturar um experimento antes de coletar os dados.</p><a href="#planejamento">Explorar →</a></article>
+        <article class="module-card"><span class="module-number">03</span><div class="module-icon">📊</div><h3>ANOVA</h3><p>Modelo, partição da variação, teste F e interpretação.</p><a href="#anova">Explorar →</a></article>
+        <article class="module-card"><span class="module-number">05</span><div class="module-icon">🌱</div><h3>Delineamentos</h3><p>DIC, DBC, quadrado latino e escolha do delineamento.</p><a href="#delineamentos">Explorar →</a></article>
+        <article class="module-card"><span class="module-number">07</span><div class="module-icon">🧩</div><h3>Experimentos Fatoriais</h3><p>Efeitos principais, interação e interpretação.</p><a href="#fatoriais">Explorar →</a></article>
+        <article class="module-card"><span class="module-number">09</span><div class="module-icon">📈</div><h3>Regressão Linear</h3><p>Relações entre variáveis e aplicações agronômicas.</p><a href="#regressao">Explorar →</a></article>
+      </div>
+
+      <div class="learning-path">
+        <span>ROTEIRO</span>
+        <div class="path">
+          <b>1</b><i></i><b>2</b><i></i><b>3</b><i></i><b>4</b><i></i><b>5</b>
+        </div>
+        <div class="path-labels"><span>Entender</span><span>Planejar</span><span>Modelar</span><span>Analisar</span><span>Interpretar</span></div>
+      </div>
+    </section>
+
+    <section id="conceitos" class="page-section">
+      <div class="lesson-header"><span class="kicker">MÓDULO 01 · FUNDAMENTOS</span><h1>Conceitos de Estatística</h1><p>O ponto de partida para compreender dados experimentais.</p></div>
+      <div class="content-grid"><article class="content-card"><span>🎯 OBJETIVOS</span><h2>O que você vai aprender</h2><ul><li>Distinguir população, amostra e unidade experimental.</li><li>Reconhecer variáveis qualitativas e quantitativas.</li><li>Compreender a variabilidade presente nos dados.</li></ul></article><article class="content-card placeholder"><span>📚 CONTEÚDO</span><h2>Aula em construção</h2><p>Esta área receberá o material completo, exemplos agronômicos, fórmulas e exercícios.</p></article></div>
+    </section>
+
+    <section id="estatistica-descritiva" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 01</span><h1>Estatística Descritiva</h1><p>Organização, resumo e visualização dos dados experimentais.</p></div><div class="placeholder-large">📊 Conteúdo da aula será adicionado aqui.</div></section>
+    <section id="variabilidade" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 01</span><h1>Variabilidade</h1><p>Média, variância, desvio-padrão, coeficiente de variação e erro.</p></div><div class="placeholder-large">📐 Conteúdo da aula será adicionado aqui.</div></section>
+
+    <section id="planejamento" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 02</span><h1>Planejamento Experimental</h1><p>Transformando uma pergunta científica em um experimento analisável.</p></div><div class="topic-list"><div>01 <b>Unidade experimental</b></div><div>02 <b>Tratamentos e fatores</b></div><div>03 <b>Repetição</b></div><div>04 <b>Aleatorização</b></div><div>05 <b>Controle local</b></div></div></section>
+
+    <section id="anova" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 03</span><h1>ANOVA · Análise de Variância</h1><p>Separando a variabilidade para avaliar efeitos de tratamentos.</p></div><div class="anova-intro"><div><span class="formula">F = QM<sub>Tratamentos</sub> / QM<sub>Erro</sub></span><p>A estatística F compara a variação explicada pelo modelo com a variação residual.</p></div><div class="placeholder-panel">📊 Aqui entraremos com uma ANOVA interativa.</div></div></section>
+
+    <section id="pressupostos" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 04</span><h1>Pressuposições da ANOVA</h1><p>Como verificar se o modelo é adequado aos dados.</p></div><div class="topic-list"><div>01 <b>Independência</b></div><div>02 <b>Normalidade dos resíduos</b></div><div>03 <b>Homogeneidade das variâncias</b></div><div>04 <b>Diagnóstico gráfico</b></div><div>05 <b>Transformação de dados</b></div></div></section>
+
+    <section id="delineamentos" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 05</span><h1>Delineamentos Experimentais</h1><p>A estrutura do experimento determina como os dados serão analisados.</p></div><div class="module-grid compact"><article class="module-card"><h3>DIC</h3><p>Delineamento Inteiramente Casualizado</p></article><article class="module-card"><h3>DBC</h3><p>Delineamento em Blocos Casualizados</p></article><article class="module-card"><h3>Quadrado Latino</h3><p>Controle simultâneo de duas fontes de variação.</p></article></div></section>
+
+    <section id="contrastes" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 06</span><h1>Contrastes e Comparações Múltiplas</h1><p>Investigando diferenças entre tratamentos após a análise.</p></div><div class="placeholder-large">⚖️ Contrastes, contrastes ortogonais, Tukey, Duncan, Scott-Knott e interpretação.</div></section>
+    <section id="fatoriais" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 07</span><h1>Experimentos Fatoriais</h1><p>Estudando dois ou mais fatores simultaneamente.</p></div><div class="placeholder-large">🧩 Efeitos principais, interação e exemplos agronômicos.</div></section>
+    <section id="parcelas" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 08</span><h1>Experimentos em Parcelas Divididas</h1><p>Estruturas com diferentes níveis de aleatorização.</p></div><div class="placeholder-large">🌾 Parcela, subparcela, modelo e análise.</div></section>
+    <section id="regressao" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 09</span><h1>Modelos de Regressão Linear</h1><p>Modelando relações entre variáveis quantitativas.</p></div><div class="placeholder-large">📈 Correlação, regressão, R², resíduos e aplicações agronômicas.</div></section>
+    <section id="conjunta" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 10</span><h1>Análise Conjunta de Experimentos</h1><p>Comparando experimentos conduzidos em diferentes ambientes ou condições.</p></div><div class="placeholder-large">🌐 Conteúdo da aula será adicionado aqui.</div></section>
+    <section id="superficie" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 11</span><h1>Superfície de Resposta</h1><p>Encontrando relações e condições ótimas em sistemas experimentais.</p></div><div class="placeholder-large">📐 Modelos quadráticos, interação, gráficos 3D e ponto ótimo.</div></section>
+    <section id="multivariada" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 12</span><h1>Introdução à Análise Multivariada</h1><p>Quando várias características precisam ser analisadas conjuntamente.</p></div><div class="placeholder-large">🧬 Componentes principais, agrupamento e interpretação.</div></section>
+    <section id="computacional" class="page-section"><div class="lesson-header"><span class="kicker">MÓDULO 13</span><h1>Análise Computacional</h1><p>Da planilha ao resultado reproduzível.</p></div><div class="module-grid compact"><article class="module-card"><h3>R / RStudio</h3><p>Análise estatística e gráficos.</p></article><article class="module-card"><h3>Python</h3><p>Computação científica e análise de dados.</p></article><article class="module-card"><h3>Reprodutibilidade</h3><p>Scripts, dados e relatórios.</p></article></div></section>
+
+    <footer>Estatística Experimental • Mestrado em Agronomia Digital • UFT • Palmas • 2026/2</footer>
+  </main>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
