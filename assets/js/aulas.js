@@ -136,6 +136,7 @@ const AULAS = [
   ]
  ]
 },
+{
  id:"variabilidade", modulo:"02 · FUNDAMENTOS", titulo:"Variabilidade, Erro Experimental e Precisão", subtitulo:"Por que duas parcelas tratadas da mesma forma não produzem exatamente o mesmo resultado.",
  objetivos:["Separar variabilidade natural de erro experimental.","Diferenciar precisão de exatidão.","Compreender repetição e erro-padrão da média."],
  blocos:[
