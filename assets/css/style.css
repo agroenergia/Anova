@@ -14,3 +14,24 @@
 .lesson-block code{background:#eef3ed;padding:2px 6px;border-radius:5px}
 .lesson-block pre{overflow:auto;background:#12231a;color:#fff;padding:16px;border-radius:12px}
 @media(max-width:580px){.lesson-block{grid-template-columns:1fr;gap:8px;padding:20px}.lesson-block-number{padding:0}}
+
+.concept-box,.definition-box,.example-box,.warning-box,.formula-box,.flow-box{margin:18px 0;padding:18px 20px;border-radius:14px;border-left:4px solid var(--accent);background:#f1f6ef;color:var(--ink);line-height:1.65}
+.warning-box{background:#fff8e8;border-left-color:#c58b28}
+.formula-box{font-size:1.18rem;font-weight:800;text-align:center;background:#edf4ea}
+.flow-box{text-align:center;font-size:1.05rem}
+.flow-box span{margin:0 10px;color:var(--accent);font-weight:800}
+.comparison-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:18px 0}
+.comparison-grid>div{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.comparison-grid span{display:block;font-size:.72rem;font-weight:800;color:var(--accent);letter-spacing:.08em;margin-bottom:7px}
+.comparison-grid b{display:block;margin-bottom:7px}
+.comparison-grid p{margin:0;color:var(--muted)}
+.lesson-table{width:100%;border-collapse:collapse;margin:18px 0;background:var(--surface)}
+.lesson-table th,.lesson-table td{padding:12px 14px;border:1px solid var(--line);text-align:left}
+.lesson-table th{background:#edf3eb;color:var(--ink)}
+.steps-box{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+.steps-box>div{padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.steps-box b{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;margin-right:7px}
+.steps-box span{font-weight:800}
+.steps-box small{display:block;color:var(--muted);margin-top:8px;line-height:1.4}
+@media(max-width:800px){.comparison-grid,.steps-box{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.comparison-grid,.steps-box{grid-template-columns:1fr}.lesson-table{font-size:.9rem}}
