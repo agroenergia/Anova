@@ -1,60 +1,141 @@
 const AULAS = [
 {
- id:"conceitos", modulo:"01 · FUNDAMENTOS", titulo:"Fundamentos da Estatística Experimental",
- subtitulo:"Aula 1 — entendendo os conceitos que formam a linguagem de um experimento.",
- objetivos:[
- "Compreender por que a Estatística Experimental é necessária na ciência agronômica.",
- "Distinguir população, amostra, unidade experimental e unidade observacional.",
- "Identificar variável, fator, tratamento, nível, repetição e controle.",
- "Entender de onde vêm a variabilidade e o erro experimental.",
- "Construir corretamente a lógica de um experimento agrícola."
+ "id": "conceitos",
+ "modulo": "01 · FUNDAMENTOS",
+ "titulo": "Fundamentos da Estatística Experimental",
+ "subtitulo": "Aula 1 — entendendo os conceitos que formam a linguagem de um experimento.",
+ "objetivos": [
+  "Compreender por que a Estatística Experimental é necessária na ciência agronômica.",
+  "Distinguir população, amostra, unidade experimental e unidade observacional.",
+  "Identificar variável, fator, tratamento, nível, repetição e controle.",
+  "Entender de onde vêm a variabilidade e o erro experimental.",
+  "Construir corretamente a lógica de um experimento agrícola."
  ],
- blocos:[
- ["1. O que é Estatística Experimental", "<p>A Estatística Experimental é o conjunto de métodos usados para <strong>planejar experimentos, coletar dados e obter conclusões sob incerteza</strong>. Na Agronomia, quase nunca duas parcelas produzem exatamente o mesmo resultado, mesmo quando recebem o mesmo tratamento.</p><p>Imagine duas parcelas de milho tratadas com a mesma dose de nitrogênio. Uma produz 5.420 kg ha⁻¹ e outra 5.080 kg ha⁻¹. A diferença pode ocorrer por pequenas diferenças de solo, umidade, plantas, clima ou outros fatores. A função da estatística é ajudar a separar a <strong>variação natural</strong> de um possível <strong>efeito produzido pelo tratamento</strong>.</p><div class='concept-box'><strong>Pergunta fundamental:</strong><br>“A diferença que observei é grande o suficiente para ser atribuída ao tratamento ou pode ser explicada pela variabilidade experimental?”</div>"],
- ["2. População e amostra", "<p><strong>População</strong> é o conjunto sobre o qual queremos fazer uma conclusão. <strong>Amostra</strong> é o conjunto de unidades efetivamente estudadas.</p><p>Exemplo: queremos estudar a produtividade de cultivares de soja nas condições de um determinado ambiente. A população pode representar as unidades agrícolas às quais desejamos generalizar a conclusão; o experimento observa apenas um número limitado de parcelas.</p><div class='comparison-grid'><div><span>POPULAÇÃO</span><b>Conjunto de interesse</b><p>Ex.: parcelas que representam as condições-alvo do estudo.</p></div><div><span>AMOSTRA</span><b>Unidades observadas</b><p>Ex.: as parcelas efetivamente incluídas no experimento.</p></div></div><p>A qualidade da conclusão depende de como a amostra foi obtida e de como o experimento foi planejado.</p>"],
- ["3. Unidade experimental", "<p>Este é um dos conceitos mais importantes da disciplina.</p><p>A <strong>unidade experimental</strong> é a menor unidade que pode receber um tratamento de forma independente. Se cada parcela recebe uma dose de fertilizante independentemente, a parcela é a unidade experimental.</p><div class='example-box'><strong>Exemplo:</strong> 4 doses de N × 5 parcelas por dose = 20 unidades experimentais.</div><p>Se medirmos 10 plantas dentro de cada parcela, continuamos tendo <strong>20 unidades experimentais</strong>, e não 200. As plantas podem ser usadas como subamostras para representar melhor a parcela.</p><div class='warning-box'><strong>Erro comum — pseudorrepetição:</strong> tratar várias plantas da mesma parcela como se cada uma tivesse recebido o tratamento independentemente.</div>"],
- ["4. Unidade observacional", "<p>A <strong>unidade observacional</strong> é aquilo em que uma medida é registrada. Ela pode coincidir com a unidade experimental, mas não necessariamente.</p><p>Exemplo: uma parcela é a unidade experimental, mas medimos altura de 10 plantas dentro dela. As 10 plantas são unidades observacionais/subamostras; o tratamento foi aplicado à parcela.</p><p>Para a análise, precisamos respeitar a unidade que realmente recebeu o tratamento. Caso contrário, o número de repetições pode ser artificialmente inflado.</p>"],
- ["5. Variável e variável resposta", "<p><strong>Variável</strong> é uma característica que pode assumir diferentes valores entre unidades.</p><p>Em um experimento de milho, podemos medir produtividade, altura, massa de mil grãos, teor de nitrogênio, índice de área foliar e número de espigas.</p><p>A <strong>variável resposta</strong> é a característica que usamos para avaliar o efeito dos tratamentos. Se queremos saber se a adubação altera a produtividade, produtividade é a variável resposta.</p><div class='definition-box'><strong>Pergunta → tratamento → variável resposta</strong><br>“A dose de N altera a produtividade do milho?”<br>Fator: dose de N · Resposta: produtividade</div>"],
- ["6. Variáveis qualitativas e quantitativas", "<p>Variáveis <strong>qualitativas</strong> representam categorias. Exemplos: cultivar, sistema de preparo, tipo de irrigação.</p><p>Variáveis <strong>quantitativas</strong> são expressas numericamente e possuem significado de magnitude. Exemplos: produtividade em kg ha⁻¹, altura em cm e dose em kg ha⁻¹.</p><table class='lesson-table'><thead><tr><th>Variável</th><th>Tipo</th><th>Exemplo</th></tr></thead><tbody><tr><td>Cultivar</td><td>Qualitativa</td><td>CV1, CV2, CV3</td></tr><tr><td>Dose de N</td><td>Quantitativa</td><td>0, 60, 120 kg ha⁻¹</td></tr><tr><td>Produtividade</td><td>Quantitativa</td><td>5.240 kg ha⁻¹</td></tr><tr><td>Sistema de preparo</td><td>Qualitativa</td><td>Plantio direto / convencional</td></tr></tbody></table>"],
- ["7. Fator, tratamento e nível", "<p>Um <strong>fator</strong> é uma característica experimental que queremos estudar. Os valores ou categorias escolhidos para esse fator são seus <strong>níveis</strong>.</p><p>Quando estudamos doses de nitrogênio, <strong>N é o fator</strong> e 0, 60, 120 e 180 kg ha⁻¹ são os níveis.</p><p>Um <strong>tratamento</strong> é a condição experimental aplicada a uma unidade. Em um experimento com apenas um fator, cada nível pode corresponder a um tratamento. Em um fatorial, cada combinação de níveis dos fatores constitui uma combinação de tratamento.</p><div class='flow-box'><b>Fator</b><span>→</span><b>Níveis</b><span>→</span><b>Tratamentos</b><br><small>Dose de N → 0, 60, 120, 180 → condições aplicadas às parcelas</small></div>"],
- ["8. Repetição", "<p><strong>Repetição</strong> significa aplicar o mesmo tratamento a diferentes unidades experimentais independentes.</p><p>Se cada dose de N é aplicada a 5 parcelas independentes, temos 5 repetições por dose. A repetição permite estimar a variabilidade experimental e dá base para comparar tratamentos.</p><div class='example-box'><strong>Exemplo:</strong> 4 doses × 5 repetições = 20 parcelas.</div><p>Mais repetições geralmente aumentam a precisão, mas não existe um número mágico. O planejamento deve considerar variabilidade, tamanho de efeito de interesse, precisão desejada e recursos disponíveis.</p>"],
- ["9. Aleatorização", "<p><strong>Aleatorização</strong> é a atribuição dos tratamentos às unidades experimentais por um processo aleatório, respeitando o delineamento escolhido.</p><p>Imagine uma área com um gradiente de fertilidade. Se todas as parcelas de alta dose forem colocadas em uma extremidade e todas as de baixa dose na outra, <strong>dose e posição ficam confundidas</strong>. Se a região mais fértil produzir mais, não saberemos se a diferença veio da dose ou do solo.</p><div class='warning-box'><strong>Princípio:</strong> aleatorizar não significa “bagunçar” o experimento. Significa impedir que fatores não controlados sejam sistematicamente associados a determinados tratamentos.</div>"],
- ["10. Controle local", "<p>Quando sabemos que existe uma fonte de variação espacial ou ambiental, podemos usar <strong>controle local</strong>. Um exemplo clássico é o bloco: unidades semelhantes são agrupadas e os tratamentos são distribuídos dentro de cada bloco.</p><p>Assim, em vez de comparar tratamentos misturados a uma grande variação ambiental, comparamos tratamentos dentro de grupos mais homogêneos.</p><div class='definition-box'><strong>DIC:</strong> unidades relativamente homogêneas.<br><strong>DBC:</strong> existe uma fonte conhecida de heterogeneidade que pode ser controlada por blocos.</div>"],
- ["11. Variabilidade experimental", "<p>A variabilidade é inevitável. Ela pode surgir do solo, clima, material vegetal, manejo, pragas, doenças, instrumentos de medição e diferenças entre unidades.</p><p>Uma forma simplificada de pensar é:</p><div class='formula-box'>Y = efeito sistemático + erro experimental</div><p>O planejamento procura <strong>controlar fontes conhecidas</strong> e estimar adequadamente as fontes que permanecem aleatórias.</p>"],
- ["12. Erro experimental", "<p>O <strong>erro experimental</strong> não significa necessariamente que alguém cometeu um erro. Na estatística experimental, ele representa a variação não explicada pelo modelo entre unidades que deveriam ser comparáveis.</p><p>Por exemplo, duas parcelas que recebem a mesma dose podem produzir valores diferentes. Essa diferença contribui para estimar a variabilidade residual.</p><div class='warning-box'><strong>Atenção:</strong> erro experimental ≠ erro de digitação, erro de medição ou falha humana. Esses problemas devem ser identificados e tratados como problemas de qualidade dos dados.</div>"],
- ["13. Efeito de tratamento", "<p>Se as médias dos tratamentos são diferentes, chamamos essa diferença de <strong>efeito de tratamento</strong>. Mas observar médias diferentes não é suficiente para afirmar que existe efeito estatisticamente demonstrado.</p><p>Precisamos considerar o tamanho da diferença em relação à variabilidade experimental. Essa ideia será formalizada na próxima etapa do curso pela <strong>ANOVA</strong>.</p><div class='formula-box'>Sinal do tratamento ÷ Ruído experimental → evidência estatística</div>"],
- ["14. Exemplo completo — doses de nitrogênio no milho", "<p>Considere um experimento com quatro doses: 0, 60, 120 e 180 kg ha⁻¹. São utilizadas cinco parcelas para cada dose.</p><table class='lesson-table'><thead><tr><th>Elemento</th><th>Definição</th></tr></thead><tbody><tr><td>Fator</td><td>Dose de nitrogênio</td></tr><tr><td>Níveis</td><td>0, 60, 120 e 180 kg ha⁻¹</td></tr><tr><td>Tratamentos</td><td>As quatro condições de dose</td></tr><tr><td>Repetições</td><td>5 por tratamento</td></tr><tr><td>Unidade experimental</td><td>Parcela de milho</td></tr><tr><td>Variável resposta</td><td>Produtividade (kg ha⁻¹)</td></tr><tr><td>Unidades experimentais</td><td>20 parcelas</td></tr></tbody></table><p>Suponha médias de 3.800, 4.500, 5.100 e 4.900 kg ha⁻¹. Visualmente existe diferença entre as médias. Entretanto, ainda precisamos saber <strong>quanto variaram as cinco parcelas dentro de cada tratamento</strong>.</p><p>Se a variabilidade dentro dos tratamentos for pequena, a diferença entre médias pode fornecer forte evidência de efeito. Se for muito grande, a mesma diferença entre médias pode ser pouco convincente.</p>"],
- ["15. Da pergunta agronômica ao experimento", "<p>Uma boa sequência de raciocínio é:</p><div class='steps-box'><div><b>1</b><span>Pergunta</span><small>A dose de N altera a produtividade?</small></div><div><b>2</b><span>Fator</span><small>Dose de N</small></div><div><b>3</b><span>Níveis</span><small>0, 60, 120, 180</small></div><div><b>4</b><span>Unidade</span><small>Parcela</small></div><div><b>5</b><span>Repetição</span><small>5 parcelas por dose</small></div><div><b>6</b><span>Resposta</span><small>Produtividade</small></div><div><b>7</b><span>Modelo</span><small>Será definido pelo delineamento</small></div></div><p>Somente depois dessa estrutura estar clara é que entramos na análise estatística.</p>"],
- ["16. O que você deve levar desta aula", "<p>Antes de decorar qualquer fórmula, memorize a lógica:</p><div class='concept-box'><strong>O tratamento é aplicado à unidade experimental.</strong><br><strong>A repetição ocorre em unidades independentes.</strong><br><strong>A variável resposta mede o resultado.</strong><br><strong>A variabilidade existe mesmo quando o tratamento é igual.</strong><br><strong>A estatística compara sinal experimental e variabilidade.</strong></div><p>Na próxima aula, vamos aprender a resumir essa variabilidade usando média, variância, desvio-padrão, coeficiente de variação e gráficos.</p>"]
+ "blocos": [
+  [
+   "1. O que é Estatística Experimental",
+   "<p>A Estatística Experimental é o conjunto de métodos usados para <strong>planejar experimentos, coletar dados e obter conclusões sob incerteza</strong>. Na Agronomia, duas parcelas raramente produzem exatamente o mesmo resultado.</p><p>Mesmo recebendo a mesma dose de nitrogênio, duas parcelas podem produzir quantidades diferentes por causa do solo, umidade, clima, plantas e outros fatores.</p><div class=\"concept-box\"><strong>Pergunta fundamental:</strong><br>“A diferença observada é grande o suficiente para ser atribuída ao tratamento ou pode ser explicada pela variabilidade experimental?”</div>"
+  ],
+  [
+   "2. População e amostra",
+   "<p><strong>População</strong> é o conjunto sobre o qual desejamos concluir. <strong>Amostra</strong> é o conjunto de unidades efetivamente estudadas.</p><div class=\"comparison-grid\"><div><span>POPULAÇÃO</span><b>Conjunto de interesse</b><p>Unidades às quais queremos generalizar a conclusão.</p></div><div><span>AMOSTRA</span><b>Unidades observadas</b><p>Unidades efetivamente incluídas no experimento.</p></div></div>"
+  ],
+  [
+   "3. Unidade experimental",
+   "<p>A <strong>unidade experimental</strong> é a menor unidade que pode receber um tratamento de forma independente.</p><div class=\"example-box\"><strong>Exemplo:</strong> 4 doses de N × 5 repetições = 20 parcelas experimentais.</div><p>Se medirmos 10 plantas dentro de cada parcela, continuamos tendo <strong>20 unidades experimentais</strong>, e não 200. As plantas são subamostras quando o tratamento foi aplicado à parcela.</p><div class=\"warning-box\"><strong>Pseudorrepetição:</strong> ocorre quando várias observações da mesma unidade tratada são consideradas, incorretamente, como repetições independentes.</div>"
+  ],
+  [
+   "4. Unidade observacional",
+   "<p>A <strong>unidade observacional</strong> é aquilo em que uma medida é registrada. Ela pode coincidir com a unidade experimental, mas não necessariamente.</p><p>Exemplo: uma parcela é a unidade experimental, mas medimos altura de 10 plantas dentro dela. As plantas são unidades observacionais; o tratamento foi aplicado à parcela.</p>"
+  ],
+  [
+   "5. Variável e variável resposta",
+   "<p><strong>Variável</strong> é uma característica que pode assumir diferentes valores. A <strong>variável resposta</strong> é a característica usada para avaliar o efeito dos tratamentos.</p><div class=\"definition-box\"><strong>Pergunta → tratamento → resposta</strong><br>“A dose de N altera a produtividade do milho?”<br>Fator: dose de N · Resposta: produtividade</div>"
+  ],
+  [
+   "6. Variáveis qualitativas e quantitativas",
+   "<p>Variáveis <strong>qualitativas</strong> representam categorias, como cultivar e sistema de preparo. Variáveis <strong>quantitativas</strong> representam magnitudes numéricas, como produtividade, altura e dose.</p><table class=\"lesson-table\"><thead><tr><th>Variável</th><th>Tipo</th><th>Exemplo</th></tr></thead><tbody><tr><td>Cultivar</td><td>Qualitativa</td><td>CV1, CV2, CV3</td></tr><tr><td>Dose de N</td><td>Quantitativa</td><td>0, 60, 120 kg ha⁻¹</td></tr><tr><td>Produtividade</td><td>Quantitativa</td><td>5.240 kg ha⁻¹</td></tr><tr><td>Sistema de preparo</td><td>Qualitativa</td><td>Direto / convencional</td></tr></tbody></table>"
+  ],
+  [
+   "7. Fator, tratamento e nível",
+   "<p>Um <strong>fator</strong> é uma característica experimental que queremos estudar. Os valores ou categorias escolhidos são seus <strong>níveis</strong>.</p><p>Se estudamos doses de nitrogênio, N é o fator e 0, 60, 120 e 180 kg ha⁻¹ são os níveis. Em um experimento simples, cada nível pode representar um tratamento.</p><div class=\"flow-box\"><b>Fator</b><span>→</span><b>Níveis</b><span>→</span><b>Tratamentos</b><br><small>Dose de N → 0, 60, 120, 180 → condições aplicadas às parcelas</small></div>"
+  ],
+  [
+   "8. Repetição",
+   "<p><strong>Repetição</strong> significa aplicar o mesmo tratamento a diferentes unidades experimentais independentes.</p><div class=\"example-box\"><strong>Exemplo:</strong> 4 doses × 5 repetições = 20 parcelas.</div><p>A repetição permite estimar a variabilidade experimental e fornece a base para comparar tratamentos.</p>"
+  ],
+  [
+   "9. Aleatorização",
+   "<p><strong>Aleatorização</strong> é a atribuição dos tratamentos às unidades experimentais por um processo aleatório, respeitando o delineamento.</p><p>Ela ajuda a evitar que fatores não controlados sejam sistematicamente associados a determinados tratamentos.</p><div class=\"warning-box\"><strong>Importante:</strong> aleatorizar não significa bagunçar o experimento; significa proteger a comparação contra associações sistemáticas indesejadas.</div>"
+  ],
+  [
+   "10. Controle local",
+   "<p>Quando existe uma fonte conhecida de heterogeneidade, podemos usar <strong>controle local</strong>. O bloco é um exemplo: unidades semelhantes são agrupadas e os tratamentos são distribuídos dentro de cada bloco.</p><div class=\"definition-box\"><strong>DIC:</strong> unidades relativamente homogêneas.<br><strong>DBC:</strong> uma fonte conhecida de heterogeneidade é controlada por blocos.</div>"
+  ],
+  [
+   "11. Variabilidade experimental",
+   "<p>A variabilidade pode surgir do solo, clima, material vegetal, manejo, pragas, doenças, instrumentos e diferenças entre unidades.</p><div class=\"formula-box\">Y = efeito sistemático + erro experimental</div><p>O planejamento procura controlar fontes conhecidas e estimar adequadamente as fontes que permanecem aleatórias.</p>"
+  ],
+  [
+   "12. Erro experimental",
+   "<p>O <strong>erro experimental</strong> não significa necessariamente que alguém cometeu um erro. Ele representa a variação não explicada pelo modelo entre unidades que deveriam ser comparáveis.</p><div class=\"warning-box\"><strong>Atenção:</strong> erro experimental não é sinônimo de erro de digitação, erro de medição ou falha humana.</div>"
+  ],
+  [
+   "13. Efeito de tratamento",
+   "<p>Se as médias dos tratamentos são diferentes, existe uma diferença observada entre elas. Para saber se há evidência estatística de efeito, precisamos considerar também a variabilidade experimental.</p><div class=\"formula-box\">Sinal do tratamento ÷ Ruído experimental → evidência estatística</div><p>Essa ideia será formalizada posteriormente pela <strong>ANOVA</strong>.</p>"
+  ],
+  [
+   "14. Exemplo completo — doses de nitrogênio no milho",
+   "<p>Considere quatro doses: 0, 60, 120 e 180 kg ha⁻¹, com cinco parcelas para cada dose.</p><table class=\"lesson-table\"><thead><tr><th>Elemento</th><th>Definição</th></tr></thead><tbody><tr><td>Fator</td><td>Dose de nitrogênio</td></tr><tr><td>Níveis</td><td>0, 60, 120 e 180 kg ha⁻¹</td></tr><tr><td>Tratamentos</td><td>Quatro condições de dose</td></tr><tr><td>Repetições</td><td>5 por tratamento</td></tr><tr><td>Unidade experimental</td><td>Parcela de milho</td></tr><tr><td>Variável resposta</td><td>Produtividade</td></tr><tr><td>Total</td><td>20 parcelas</td></tr></tbody></table><p>Suponha médias de 3.800, 4.500, 5.100 e 4.900 kg ha⁻¹. Existe diferença entre médias, mas ainda precisamos conhecer a variabilidade das parcelas dentro de cada tratamento.</p>"
+  ],
+  [
+   "15. Da pergunta agronômica ao experimento",
+   "<p>Use esta sequência mental:</p><div class=\"steps-box\"><div><b>1</b><span>Pergunta</span><small>A dose de N altera a produtividade?</small></div><div><b>2</b><span>Fator</span><small>Dose de N</small></div><div><b>3</b><span>Níveis</span><small>0, 60, 120, 180</small></div><div><b>4</b><span>Unidade</span><small>Parcela</small></div><div><b>5</b><span>Repetição</span><small>5 por dose</small></div><div><b>6</b><span>Resposta</span><small>Produtividade</small></div><div><b>7</b><span>Análise</span><small>Modelo adequado ao delineamento</small></div></div>"
+  ],
+  [
+   "16. Resumo mental da Aula 1",
+   "<div class=\"concept-box\"><strong>Tratamento</strong> é aplicado à <strong>unidade experimental</strong>.<br><strong>Repetição</strong> ocorre em unidades independentes.<br><strong>Variável resposta</strong> mede o resultado.<br><strong>Variabilidade</strong> existe mesmo quando o tratamento é igual.<br><strong>Estatística</strong> compara o sinal do tratamento com o ruído experimental.</div><p>Na Aula 2, vamos aprender a medir e resumir essa variabilidade usando média, mediana, variância, desvio-padrão, coeficiente de variação e gráficos.</p>"
+  ]
  ],
- exercicios:[
- "Em um experimento com três cultivares e seis parcelas por cultivar, qual é a unidade experimental e quantas unidades experimentais existem?",
- "Um pesquisador mede 15 plantas de cada uma das quatro parcelas de um tratamento. Quantas repetições experimentais existem?",
- "Em um experimento com doses de N de 0, 50, 100 e 150 kg ha⁻¹, identifique fator, níveis e tratamentos.",
- "Explique com um exemplo por que aleatorização é importante.",
- "Qual é a diferença entre erro experimental e erro de medição?",
- "Duas médias de produtividade são diferentes. Por que isso, sozinho, não permite concluir que os tratamentos diferem estatisticamente?"
+ "exercicios": [
+  "Em um experimento com três cultivares e seis parcelas por cultivar, qual é a unidade experimental e quantas unidades experimentais existem?",
+  "Um pesquisador mede 15 plantas em cada uma de quatro parcelas. Quantas repetições experimentais existem?",
+  "Em um experimento com doses de N de 0, 50, 100 e 150 kg ha⁻¹, identifique fator, níveis e tratamentos.",
+  "Explique com um exemplo por que a aleatorização é importante.",
+  "Qual é a diferença entre erro experimental e erro de medição?",
+  "Duas médias de produtividade são diferentes. Por que isso, sozinho, não permite concluir que os tratamentos diferem estatisticamente?"
  ],
- quiz:[
- ["Uma parcela recebe um tratamento independentemente das outras. Essa parcela é:",["A) unidade observacional","B) unidade experimental","C) população","D) variável"],"B"],
- ["Quatro doses de N são aplicadas a cinco parcelas por dose. Quantas unidades experimentais existem?",["A) 4","B) 5","C) 9","D) 20"],"D"],
- ["Dez plantas medidas dentro da mesma parcela representam automaticamente dez repetições?",["A) Sim","B) Não"],"B"],
- ["No experimento com doses de N, 0, 60, 120 e 180 kg ha⁻¹ são:",["A) fatores","B) níveis do fator","C) erros","D) blocos"],"B"],
- ["A aleatorização ajuda principalmente a:",["A) eliminar toda a variabilidade","B) garantir que todas as médias sejam iguais","C) evitar associação sistemática entre tratamento e fatores não controlados","D) aumentar artificialmente o número de repetições"],"C"]
+ "quiz": [
+  [
+   "Uma parcela recebe um tratamento independentemente das outras. Essa parcela é:",
+   [
+    "A) unidade observacional",
+    "B) unidade experimental",
+    "C) população",
+    "D) variável"
+   ],
+   "B"
+  ],
+  [
+   "Quatro doses de N são aplicadas a cinco parcelas por dose. Quantas unidades experimentais existem?",
+   [
+    "A) 4",
+    "B) 5",
+    "C) 9",
+    "D) 20"
+   ],
+   "D"
+  ],
+  [
+   "Dez plantas medidas dentro da mesma parcela representam automaticamente dez repetições?",
+   [
+    "A) Sim",
+    "B) Não"
+   ],
+   "B"
+  ],
+  [
+   "No experimento com doses de N, 0, 60, 120 e 180 kg ha⁻¹ são:",
+   [
+    "A) fatores",
+    "B) níveis do fator",
+    "C) erros",
+    "D) blocos"
+   ],
+   "B"
+  ],
+  [
+   "A aleatorização ajuda principalmente a:",
+   [
+    "A) eliminar toda a variabilidade",
+    "B) garantir que todas as médias sejam iguais",
+    "C) evitar associação sistemática entre tratamento e fatores não controlados",
+    "D) aumentar artificialmente o número de repetições"
+   ],
+   "C"
+  ]
  ]
 },
- id:"estatistica-descritiva", modulo:"02 · FUNDAMENTOS", titulo:"Estatística Descritiva e Variabilidade", subtitulo:"Como organizar e resumir dados antes de fazer inferência.",
- objetivos:["Calcular e interpretar média, mediana, amplitude, variância e desvio-padrão.","Compreender quartis e coeficiente de variação.","Usar tabelas e gráficos para detectar padrões e problemas nos dados."],
- blocos:[
- ["1. Medidas de tendência central","<p>A <strong>média aritmética</strong> é \(\bar y=\frac{1}{n}\sum y_i\). Ela representa o centro dos dados, mas pode ser influenciada por valores extremos. A <strong>mediana</strong> é o valor central após ordenar as observações.</p>"],
- ["2. Medidas de dispersão","<p>A amplitude é \(máximo-mínimo\). A variância amostral é \(s^2=\frac{\sum(y_i-\bar y)^2}{n-1}\). O desvio-padrão é \(s=\sqrt{s^2}\). Quanto maior o desvio-padrão, maior a dispersão dos valores em torno da média.</p>"],
- ["3. Coeficiente de variação","<p>O <strong>CV</strong> é \(CV=100\times s/\bar y\). Ele expressa a dispersão como porcentagem da média e é muito usado em experimentação agrícola para comparar a precisão relativa de experimentos ou variáveis.</p><p>Exemplo: média de 5.000 kg ha⁻¹ e desvio-padrão de 250 kg ha⁻¹ dão CV = 5%. Não existe um único limite universal de CV para todas as culturas, variáveis e condições; a interpretação depende do contexto experimental.</p>"],
- ["4. Visualização","<p>Histograma ajuda a observar a distribuição; boxplot evidencia mediana, quartis e possíveis extremos; gráfico de dispersão mostra associação entre duas variáveis; gráfico de resíduos será essencial nas aulas de modelos.</p>"],
- ["5. Exemplo","<p>Dados de produtividade: 4.200, 4.400, 4.500, 4.700 e 4.200 kg ha⁻¹. A média é 4.400 kg ha⁻¹. O desvio-padrão resume o quanto as parcelas se afastam desse valor. Antes de comparar tratamentos, examine também os dados individualmente: erros de digitação podem parecer “outliers”.</p>"]
- ],
- exercicios:["Calcule média e mediana de 10, 12, 13, 15 e 20.","Explique o que significa CV = 8%.","Escolha um gráfico adequado para comparar a distribuição de produtividade entre quatro tratamentos."]
-},
-{
  id:"variabilidade", modulo:"02 · FUNDAMENTOS", titulo:"Variabilidade, Erro Experimental e Precisão", subtitulo:"Por que duas parcelas tratadas da mesma forma não produzem exatamente o mesmo resultado.",
  objetivos:["Separar variabilidade natural de erro experimental.","Diferenciar precisão de exatidão.","Compreender repetição e erro-padrão da média."],
  blocos:[
